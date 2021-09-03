@@ -31,11 +31,26 @@ export function AuthProvider({children}) {
         return auth.signOut()
     }
 
+    function resetpassword(email) {
+        return auth.sendPasswordResetEmail(email)
+    }
+
+    function updateEmail(email) {
+        return currentUser.updateEmail(email)
+    }
+
+    function updatePassword(password) {
+        return currentUser.updatePassword(password)
+    }
+
     const value = {
         currentUser,
         signup,
         signin,
-        logout
+        logout,
+        resetpassword,
+        updateEmail,
+        updatePassword
     }
 
     return (

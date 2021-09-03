@@ -7,7 +7,9 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Signup from './Signup'
 import Signin from './Signin'
 import Dashboard from './Dashboard'
+import ForgotPassword from './ForgotPassword'
 import PrivateRouter from './PrivateRouter'
+import UpdateProfile from './UpdateProfile'
 
 function App() {
   return (
@@ -17,8 +19,10 @@ function App() {
           <Router>
             <Switch>
               <PrivateRouter exact path="/" component={Dashboard}></PrivateRouter>
+              <PrivateRouter exact path="/update_profile" component={UpdateProfile}></PrivateRouter>
               <Route path="/login" component={Signin}></Route>
               <Route path="/signup" component={Signup}></Route>
+              <Route path="/forgot_password" component={ForgotPassword}></Route>
             </Switch>
           </Router>
         </div>
